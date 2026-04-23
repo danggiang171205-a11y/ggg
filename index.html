@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bài tập jQuery Events</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 30px; }
+  button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+  input { padding: 8px; font-size: 16px; margin-top: 10px; display: block; }
+  img { width: 300px; margin-top: 10px; display: block; cursor: pointer; }
+  #resultDiv { margin-top: 10px; padding: 10px; background: #f0f0f0; min-height: 40px; }
+</style>
+</head>
+<body>
+
+<h1>Bài tập jQuery Events</h1>
+
+<button id="clickBtn">Click me!</button>
+
+<input type="text" id="textInput" placeholder="Nhập gì đó..." />
+
+<img id="mainImage" src="https://picsum.photos/300/200" alt="ảnh" />
+
+<div id="resultDiv">Kết quả hiển thị ở đây...</div>
+
+<script>
+  // Button click
+  $("#clickBtn").click(function() {
+    $("#resultDiv").text("Bạn đã click vào nút!");
+  });
+
+  // Input nhập
+  $("#textInput").keyup(function() {
+    $("#resultDiv").text("Bạn đang nhập: " + $(this).val());
+  });
+
+  // Ảnh click - ẩn/hiện
+  $("#mainImage").click(function() {
+    $(this).toggle();
+    $("#resultDiv").text("Ảnh đã bị ẩn! Click nút để hiện lại.");
+  });
+</script>
+
+</body>
+</html>
